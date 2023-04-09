@@ -1,4 +1,3 @@
-vu
 <template>
   <section class="background">
     <router-view> </router-view>
