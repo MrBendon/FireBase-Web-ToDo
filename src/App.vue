@@ -1,26 +1,51 @@
+vu
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <section class="background">
+    <router-view> </router-view>
+    <base-spinner class="spinner" v-if="getIsLoading"></base-spinner>
+  </section>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
+  // name: "App",
   components: {
-    HelloWorld
-  }
-}
+    // LogInAndSignUp,
+  },
+  computed: {
+    getIsLoading() {
+      return this.$store.getters["AuthModule/getIsLoading"];
+    },
+  },
+  data() {
+    return {};
+  },
+
+  mounted() {
+    this.$store.dispatch("AuthModule/init");
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background {
+  min-height: 920px;
+  background-image: linear-gradient(rgb(214, 93, 45), rgb(23, 23, 170));
+  padding: 1rem;
+  position: relative;
+}
+
+.spinner {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
 }
 </style>
