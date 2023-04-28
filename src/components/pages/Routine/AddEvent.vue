@@ -127,7 +127,7 @@ export default {
   position: fixed;
   top: 20%;
   margin: 0 auto;
-  z-index: 10;
+  z-index: 20;
   width: 350px;
   min-height: 50vh;
   border-radius: 20px;

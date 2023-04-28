@@ -12,9 +12,6 @@ import ForgetPW from "./components/pages/Auth/ForgetPw.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    // { path: "/", redirect: "/login" },
-    // { path: "/login", component: LogInPage },
-
     { path: "/", component: LogInPage },
     { path: "/login", redirect: "/" },
 

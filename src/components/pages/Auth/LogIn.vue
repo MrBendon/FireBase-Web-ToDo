@@ -9,6 +9,7 @@
             <ul class="about__list">
               <li>記事本與每日排程器CRUD</li>
               <li>帳戶登入、註冊、驗證、忘記密碼</li>
+              <li>登入請使用帳號密碼：123@test.com / 123456</li>
             </ul>
             <br />
             <h4>此網頁為自我練習之作品，使用工具與技術包含以下：</h4>
@@ -286,7 +287,7 @@ input::placeholder {
   justify-content: center;
   font-size: 14px;
   color: rgb(182, 182, 182);
-  margin: 1rem 2rem;
+  margin: 1rem 1em;
   transition: all 0.25s;
   text-decoration: none;
 }

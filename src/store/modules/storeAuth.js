@@ -36,6 +36,7 @@ export default {
         .catch((error) => {
           console.log(error);
           context.commit("changeRegisterMessage", error.message);
+          context.commit("changeIsLoading", false);
           // ..
         });
     },
@@ -48,6 +49,8 @@ export default {
         })
         .catch((error) => {
           const errorCode = error.code;
+          console.log(error);
+          context.commit("changeIsLoading", false);
           context.commit("changeLoginMessage", errorCode);
         });
     },
@@ -70,6 +73,7 @@ export default {
           this.UserInfo = {};
           context.commit("changeProgressState", false);
           context.commit("changeIsLoading", false);
+          context.commit("changeLoginMessage", "");
         }
       });
     },
